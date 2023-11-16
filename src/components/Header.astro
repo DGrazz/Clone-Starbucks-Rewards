@@ -1,6 +1,7 @@
+
 <header class="header">
     <div class="header__content">
-        <svg class="header__logo"
+        <a href="#"><svg class="header__logo"
             aria-hidden="true"
             focusable="false"
             height="100%"
@@ -14,11 +15,11 @@
                     d="M53.595 57.01h-1.526v4.105h-.547v-4.105h-1.522v-.51h3.595v.51zM54.236 56.5h.811l1.57 3.618h.011l1.574-3.618h.798v4.615h-.551v-3.869h-.012l-1.653 3.869h-.333l-1.659-3.869h-.011v3.869h-.545v-4.615z"
                 ></path></g
             ></svg
-        >
+        ></a>
         <ul class="header__menu">
-            <li class="header__menu-item">menu</li>
-            <li class="header__menu-item">rewards</li>
-            <li class="header__menu-item">gift cards</li>
+            <li class="header__menu-item"><a href="#">menu</a></li>
+            <li class="header__menu-item active"><a href="#">rewards</a></li>
+            <li class="header__menu-item"><a href="#">gift cards</a></li>
         </ul>
     </div>
 
@@ -29,7 +30,7 @@
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
+                    style="transform: ;msFilter:;"
                     ><path
                         d="M12 2C7.589 2 4 5.589 4 9.995 3.971 16.44 11.696 21.784 12 22c0 0 8.029-5.56 8-12 0-4.411-3.589-8-8-8zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"
                     ></path>
@@ -43,10 +44,11 @@
 
 <style>
     .header {
-        widows: 100%;
+        width: 100%;
+        height: 100px;
         display: flex;
         justify-content: space-between;
-        padding: 5px 20px;
+        padding: 0px 40px;
         align-items: center;
         background-color: var(--white);
     }
@@ -54,33 +56,64 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        height: 100%;
     }
     .header__logo {
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 3.4rem;
+        height: 3.4rem;
     }
     .header__menu {
         display: flex;
-        gap: 5px;
+        gap: 20px;
+        margin-left: 20px;
+        height: 100%;
     }
     .header__menu-item{
         text-transform: uppercase;
+        font-weight: bold;
+        font-size: 15px;
+        letter-spacing: 2px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .header__menu-item:hover{
+        color: var(--green);
+    }
+    .active{
+        box-shadow: inset 0 -6px var(--green);
     }
 
     .header__stores {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-right: 30px;
+        font-weight: 500;
+        font-size: 14px;
+        gap: 5px;
+    }
+    .header__stores:hover{
+        color: var(--green);
+        fill: var(--green);
     }
     .header__btn{
         font-size: 14px;
-        padding: 7px 16px;
+        padding: 5px 16px;
         border: 1px solid black;
         border-radius: 100px;
+        font-weight: 500;
+    }
+    .header__btn:hover{
+        background-color: rgba(0,0,0,.1);
     }
     .header__btn--black{
         font-weight: bold;
         color: white;
         background-color: black;
+    }
+    .header__btn--black:hover{
+        background-color: rgba(0,0,0,.7);
     }
 </style>
