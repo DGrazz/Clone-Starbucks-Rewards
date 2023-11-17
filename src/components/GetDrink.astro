@@ -1,17 +1,60 @@
-<section>
-    <h2>Get your favourites for free</h2>
+---
+import TitleSection from "./TitleSection.astro";
+---
 
-    <ul class="points">
-        <li class="point">25</li>
-        <li class="point">100</li>
-        <li class="point">200</li>
-        <li class="point">300</li>
-        <li class="point">400</li>
-    </ul>
+<section>
+    <TitleSection title="Get your favourites for free"/>
+    <div class="options">
+        <div class="options__points">
+            <button class="options__point">25 <span class="star">★</span></button>
+            <button class="options__point">100 <span class="star">★</span></button>
+            <button class="options__point">200 <span class="star">★</span></button>
+            <button class="options__point">300 <span class="star">★</span></button>
+            <button class="options__point">400 <span class="star">★</span></button>
+        </div>
+
+        <div class="options__option">
+            <img class="options__img" src="" alt="" />
+            <div class="options__info">
+                <h3 class="options__title">Customize your drink</h3>
+                <p class="options__desc">
+                    Make your drink just right with an extra espresso shot,
+                    nondairy milk or a dash of your favorite syrup.
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <style>
-    section{
+    section {
         background-color: var(--white);
+    }
+    h2 {
+        text-align: center;
+    }
+    .options__points {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .options__point {
+        width: 108px;
+        height: 60px;
+        padding: 8px 8px 16px;
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .options__option {
+        width: 100%;
+        background-color: var(--lightGreen);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+    }
+    .star{
+        font-size: 16px;
+        color: #cba258;
     }
 </style>
