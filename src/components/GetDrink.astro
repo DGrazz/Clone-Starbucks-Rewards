@@ -3,24 +3,36 @@ import TitleSection from "./TitleSection.astro";
 ---
 
 <section>
-    <TitleSection title="Get your favourites for free"/>
+    <TitleSection title="Get your favourites for free" />
     <div class="options">
         <div class="options__points">
-            <button class="options__point">25 <span class="star">★</span></button>
-            <button class="options__point">100 <span class="star">★</span></button>
-            <button class="options__point">200 <span class="star">★</span></button>
-            <button class="options__point">300 <span class="star">★</span></button>
-            <button class="options__point">400 <span class="star">★</span></button>
+            <button class="options__point active"
+                >25 <span class="star">★</span></button
+            >
+            <button class="options__point"
+                >100 <span class="star">★</span></button
+            >
+            <button class="options__point"
+                >200 <span class="star">★</span></button
+            >
+            <button class="options__point"
+                >300 <span class="star">★</span></button
+            >
+            <button class="options__point"
+                >400 <span class="star">★</span></button
+            >
         </div>
 
         <div class="options__option">
-            <img class="options__img" src="" alt="" />
-            <div class="options__info">
-                <h3 class="options__title">Customize your drink</h3>
-                <p class="options__desc">
-                    Make your drink just right with an extra espresso shot,
-                    nondairy milk or a dash of your favorite syrup.
-                </p>
+            <div class="center">
+                <img class="options__img" src="../../public/025.webp" alt="" />
+                <div class="options__info">
+                    <h3 class="options__title">Customize your drink</h3>
+                    <p class="options__desc">
+                        Make your drink just right with an extra espresso shot,
+                        nondairy milk or a dash of your favorite syrup.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -29,32 +41,74 @@ import TitleSection from "./TitleSection.astro";
 <style>
     section {
         background-color: var(--white);
+        width: 100%;
+        margin: 3.2rem 0;
+        padding-top: 4.8rem;
     }
     h2 {
         text-align: center;
     }
+    .options{
+        padding-top: 1%;
+    }
+
     .options__points {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .options__point {
         width: 108px;
         height: 60px;
         padding: 8px 8px 16px;
         font-size: 24px;
         font-weight: 500;
+        position: relative;
     }
+
     .options__option {
         width: 100%;
         background-color: var(--lightGreen);
+        padding: 3.2rem 0;
+    }
+
+    .center{
+        width: 55%;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10%;
     }
-    .star{
+
+    .options__img {
+        width: 375px;
+        height: 211px;
+    }
+
+    .options__title{
+        font-size: 24px;
+        padding-bottom: 16px;
+        font-weight: 500;
+    }
+
+    .options__desc{
+        font-size: 16px;
+    }
+
+    .star {
         font-size: 16px;
         color: #cba258;
+    }
+    
+    .active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: var(--green);
     }
 </style>
