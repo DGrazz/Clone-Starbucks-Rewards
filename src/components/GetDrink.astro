@@ -2,42 +2,6 @@
 import TitleSection from "./TitleSection.astro";
 ---
 
-<section>
-    <TitleSection title="Get your favourites for free" />
-    <div class="options">
-        <div class="options__points">
-            <button class="options__point active"
-                >25 <span class="star">★</span></button
-            >
-            <button class="options__point"
-                >100 <span class="star">★</span></button
-            >
-            <button class="options__point"
-                >200 <span class="star">★</span></button
-            >
-            <button class="options__point"
-                >300 <span class="star">★</span></button
-            >
-            <button class="options__point"
-                >400 <span class="star">★</span></button
-            >
-        </div>
-
-        <div class="options__option">
-            <div class="center">
-                <img class="options__img" src="../../public/025.webp" alt="" />
-                <div class="options__info">
-                    <h3 class="options__title">Customize your drink</h3>
-                    <p class="options__desc">
-                        Make your drink just right with an extra espresso shot,
-                        nondairy milk or a dash of your favorite syrup.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <style>
     section {
         background-color: var(--white);
@@ -48,7 +12,7 @@ import TitleSection from "./TitleSection.astro";
     h2 {
         text-align: center;
     }
-    .options{
+    .options {
         padding-top: 1%;
     }
 
@@ -73,13 +37,15 @@ import TitleSection from "./TitleSection.astro";
         padding: 3.2rem 0;
     }
 
-    .center{
+    .center {
         width: 55%;
         margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10%;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
     }
 
     .options__img {
@@ -87,13 +53,17 @@ import TitleSection from "./TitleSection.astro";
         height: 211px;
     }
 
-    .options__title{
+    .options__info {
+        max-width: 340px;
+    }
+
+    .options__title {
         font-size: 24px;
         padding-bottom: 16px;
         font-weight: 500;
     }
 
-    .options__desc{
+    .options__desc {
         font-size: 16px;
     }
 
@@ -101,7 +71,7 @@ import TitleSection from "./TitleSection.astro";
         font-size: 16px;
         color: #cba258;
     }
-    
+
     .active::after {
         content: "";
         position: absolute;
@@ -111,4 +81,149 @@ import TitleSection from "./TitleSection.astro";
         height: 4px;
         background-color: var(--green);
     }
+
+    .visible {
+        opacity: 1;
+        transition: all 1s;
+    }
+
 </style>
+
+
+<section>
+    <TitleSection title="Get your favourites for free" />
+    <div class="options">
+        <div class="options__points">
+            <button class="options__point active" id="1"
+                >25 <span class="star">★</span></button
+            >
+            <button class="options__point" id="2"
+                >100 <span class="star">★</span></button
+            >
+            <button class="options__point" id="3"
+                >200 <span class="star">★</span></button
+            >
+            <button class="options__point" id="4"
+                >300 <span class="star">★</span></button
+            >
+            <button class="options__point" id="5"
+                >400 <span class="star">★</span></button
+            >
+        </div>
+
+        <div id="1" class="options__option">
+            <div class="center visible">
+                <img class="options__img" src="../../public/025.webp" alt="" />
+                <div class="options__info">
+                    <h3 class="options__title">Customize your drink</h3>
+                    <p class="options__desc">
+                        Make your drink just right with an extra espresso shot,
+                        nondairy milk or a dash of your favorite syrup.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="2" class="options__option">
+            <div class="center">
+                <img class="options__img" src="../../public/100.webp" alt="" />
+                <div class="options__info">
+                    <h3 class="options__title">
+                        Brewed hot or iced coffee or tea, bakery item, packaged
+                        snack and more
+                    </h3>
+                    <p class="options__desc">
+                        Treat yourself to an iced coffee, buttery croissant, bag
+                        of chips and more.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="3" class="options__option">
+            <div class="center">
+                <img class="options__img" src="../../public/200.webp" alt="" />
+                <div class="options__info">
+                    <h3 class="options__title">
+                        Handcrafted drink (Cold Brew, lattes and more) or hot
+                        breakfast
+                    </h3>
+                    <p class="options__desc">
+                        Turn good mornings great with a delicious handcrafted
+                        drink of your choice, breakfast sandwich or oatmeal on
+                        us.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="4" class="options__option">
+            <div class="center">
+                <img class="options__img" src="../../public/300.webp" alt="" />
+                <div class="options__info">
+                    <h3 class="options__title">
+                        Sandwich, protein box or at-home coffee
+                    </h3>
+                    <p class="options__desc">
+                        Enjoy a PM pick-me-up with a lunch sandwich, protein box
+                        or a bag of coffee—including Starbucks VIA Instant®.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="5" class="options__option">
+            <div class="center">
+                <img class="options__img" src="../../public/400.webp" alt="" />
+                <div class="options__info">
+                    <h3 class="options__title">
+                        Select Starbucks® merchandise
+                    </h3>
+                    <p class="options__desc">
+                        Take home a signature cup, drink tumbler or your choice
+                        of coffee merch up to $20.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- //En vez de hacerlo con data-target hacerlo con un array de objetos o id's -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".options__point");
+        const options = document.querySelectorAll(".options__option");
+        const centers = document.querySelectorAll(".center");
+
+        // Mostrar por defecto el primer elemento
+        options.forEach((option, index) => {
+            if (index !== 0) {
+                option.classList.add("hidden");
+            }
+        });
+
+        buttons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                // Ocultar todas las opciones y centros
+                options.forEach((option) => {
+                    option.classList.add("hidden");
+                });
+
+                centers.forEach((center) => {
+                    center.classList.remove("visible");
+                });
+
+                // Mostrar la opción y centro correspondientes al botón clickeado
+                options[index].classList.remove("hidden");
+                centers[index].classList.add("visible");
+
+                // Cambiar clases activas
+                buttons.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+                button.classList.add("active");
+            });
+        });
+    });
+</script>
